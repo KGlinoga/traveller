@@ -7,8 +7,8 @@ const travellers = require('./travelRoutes');
 // import 3 files (traveller, trips, locaitons)
 
 // router.use for each ('/traveller, )
-router.use('/location', locations);
-router.use('/traveller', travellers);
+router.use('/locations', locations);
+router.use('/travellers', travellers);
 router.use('/trips', trips);
 
 module.exports = router;
