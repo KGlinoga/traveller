@@ -1,15 +1,24 @@
 const express = require('express');
-const routes = require('./routes');
+const allRoutes = require('./controllers');
+
 const sequelize = require('./config/connection');
 
+// sets up Express App
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+// Requiring our models for syncing:
+const { Traveller,Location,Trip} = require('./models');
 
-app.use(express.json());
+// Sets up Express app to handl data parsing
 app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
 
-app.use(routes);
+app.use('/',allRoutes);
 
-sequelize.sync({ force: false}).then(()=>{
-    app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+sequelize.sync({ force: false}).then(function() {
+    app.listen(PORT, function() {
+        console.log(`Now listening at http://localhost:${PORT}`);
+    });
+}).catch(err=>{
+    console.log(err)
 });

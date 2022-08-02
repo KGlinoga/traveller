@@ -5,22 +5,24 @@ class Location extends Model {}
 
 Location.init(
     {
-        location_id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement:true
-        }, 
+            // the following code wasn't in Joe's demo
+        // location_id: {
+        //     type: DataTypes.INTEGER,
+        //     primaryKey: true,
+        //     autoIncrement:true
+        // }, 
         location_name: {
             type: DataTypes.STRING
         }
 },
 {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'location'
+                 // the following code wasn't in Joe's demo
+    // timestamps: false,
+    // freezeTableName: true,
+    // underscored: true,
+    // modelName: 'location'
   }
 )
 
-module.exports = Location;
+module.exports = Location

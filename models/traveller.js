@@ -5,12 +5,13 @@ class Traveller extends Model {}
 
 Traveller.init(
     {
-        traveller_id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement:true
-        }, 
-        traveller_name: {
+                // the following code wasn't in Joe's demo
+        // traveller_id: {
+        //     type: DataTypes.INTEGER,
+        //     primaryKey: true,
+        //     autoIncrement:true
+        // }, 
+        name: {
             type: DataTypes.STRING
         },
         email: {
@@ -19,10 +20,11 @@ Traveller.init(
 },
 {
     sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'traveller'
+            // the following code wasn't in Joe's demo
+    // timestamps: false,
+    // freezeTableName: true,
+    // underscored: true,
+    // modelName: 'traveller'
   }
 )
-module.exports = Traveller;
+module.exports=Traveller

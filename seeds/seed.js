@@ -1,9 +1,13 @@
+// importing the config/connection file
 const sequelize = require('../config/connection');
+// importing models
 const { Traveller, Location, Trip } = require('../models');
 
+// importing jsons
 const travellerSeedData = require('./travellerSeedData.json');
 const locationSeedData = require('./locationSeedData.json');
 
+// something w/ the timing of the file execution - async/await 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
